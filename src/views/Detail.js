@@ -5,20 +5,22 @@ import { useParams, Link } from "react-router-dom";
 const Detail = (props) => {
     const [product, setProduct] = useState({})
     const { id } = useParams();
+    const { updatedProduct } = props
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/product/' + id)
+        axios.get('http://localhost:8000/api/product/' +id)
             .then(res => setProduct(res.data))
             .catch(err => console.error(err));
-    }, [id]);
+    }, [product]);
 
     return (
         <div>
             <p>Name: {product.name}</p>
             <p>Price: {product.price}</p>
             <p>Description: {product.description}</p>
-            <Link to={'/product' + product._id + '/edit'}>Edit</Link>
-            <Link to={'/product' + product._id + '/delete'}>Delete</Link>
+            <Link to={'/product/' + product._id + '/edit'}>Edit</Link>
+            <Link to={'/product/'}>Home</Link>
+
         </div>
     )
 }

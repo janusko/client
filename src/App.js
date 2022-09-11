@@ -10,8 +10,7 @@ function App() {
       <Routes>
         <Route element={<Main />} path="/product/" />
         <Route element={<Detail />} path="/product/:id" />
-        <Route element={<Update />} path='/product/:id/edit' />
-        <Route element={<Detail />} path='/product/:id/delete' />
+        <Route element={<Update />} path="/product/:id/edit" />
       </Routes>
     </div>
   );
