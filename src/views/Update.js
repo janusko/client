@@ -22,7 +22,6 @@ const Update = (props) => {
         axios.put('http://localhost:8000/api/product/' + id, product)
             .then(res => console.log(res))
         navigate('/product/' + id)
-        props.newUpdate()
     }
 
     return (
@@ -35,8 +34,9 @@ const Update = (props) => {
                         initialName={product.name}
                         initialPrice={product.price}
                         initialDescription={product.description}
+                        // initial from product form
                     />
-                    <DeleteButton productId={product._id} successCallback={() => navigate('/product')} />
+                    <DeleteButton productId={product._id} />
                 </>
             )}
         </div>

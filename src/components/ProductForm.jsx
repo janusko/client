@@ -10,7 +10,7 @@ export default (props) => {
     const onSubmitHandler = (e) => {
         e.preventDefault();
         onSubmitProp({name, price, description});
-
+        // values below
     }
 
     return (

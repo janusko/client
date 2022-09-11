@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import DeleteButton from './DeleteButton';
 
 const ProductList = (props) => {
-    const {removeFromDom } = props
     const [product, setProduct] = useState([])
 
     useEffect(() => {
@@ -19,7 +18,7 @@ const ProductList = (props) => {
             <p key={i}>
                 <Link to={(`/product/${product._id}`)} >  {product.name}</Link>
                 |
-                <DeleteButton productId={product._id} successCallback={()=>removeFromDom(product._id)}/>
+                <DeleteButton productId={product._id} />
             </p>
             )}
         </div>

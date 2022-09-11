@@ -2,16 +2,16 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { useParams, Link } from "react-router-dom";
 
-const Detail = (props) => {
+const Detail = () => {
     const [product, setProduct] = useState({})
     const { id } = useParams();
-    const { updatedProduct } = props
 
     useEffect(() => {
         axios.get('http://localhost:8000/api/product/' +id)
             .then(res => setProduct(res.data))
             .catch(err => console.error(err));
     }, [product]);
+    // allows us to view changes without reloading with [products]
 
     return (
         <div>
